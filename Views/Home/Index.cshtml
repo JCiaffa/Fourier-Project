@@ -1,0 +1,140 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+  </head>
+  <link rel="stylesheet" href="css\style.css" />
+  <link rel="stylesheet" href="css\style.bootstrap.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+    rel="stylesheet"
+  />
+  <body class="body bb">
+    <header>
+      <p class="text_l center">
+        Fourier Series and Fourier Transform Visualization
+      </p>
+    </header>
+    <div class="preview_container">
+      <div class="preview">
+        <p class="text_m center">Square Wave N=25</p>
+        <img 
+        src="~/images/squarefourier.png"
+        alt="saw"
+        class="imb"
+        ></img>
+        <div class="blackback">
+          <video
+            autoplay
+            loop
+            muted
+            src="~/loops/square/squaren25.webm"
+            class="video_main"
+          ></video>
+        </div>
+      </div>
+      <div class="preview">
+        <p class="text_m center">Sawtooth Wave N=25</p>
+        <img 
+        src="~/images/sawfourierwhite.png"
+        alt="saw"
+        class="imb"
+        ></img>
+        <video
+          autoplay
+          loop
+          muted
+          src="~/loops/saw/sawn25.webm"
+          class="video_main"
+        ></video>
+      </div>
+      <div class="preview">
+        <p class="text_m center">Triangle Wave N=30</p>
+        <img 
+        src="~/images/trifourier.png"
+        alt="saw"
+        class="imb"
+        ></img>
+        <video
+          autoplay
+          loop
+          muted
+          src="~/loops/tri/trin30.webm"
+          class="video_main"
+        ></video>
+      </div>
+    </div>
+    <div class="text_body">
+      <p class="preview">
+        A Fourier series is a sum that represents a periodic function as a sum
+        of sine and cosine waves. The frequency of each wave in the sum, or
+        harmonic, is an integer multiple of the periodic function's fundamental
+        frequency. Each harmonic's phase and amplitude can be determined using
+        harmonic analysis. A Fourier series may potentially contain an infinite
+        number of harmonics. Summing part of but not all the harmonics in a
+        function's Fourier series produces an approximation of that function.
+        For example, using the first few harmonics of the Fourier series for a
+        square wave yields a decent approximation of a square wave. As seen
+        above, using a greater number of harmonics of a wave's Fourier series
+        yields a highly accurate approximations of the respective wave. Here
+        we'll visualize the convergence of this approximation to it's true
+        fuction by allowing the user to choose the number of iterations that are
+        calculated in each series.
+      </p>
+      <div class="body_container">
+        <div>
+          <p class="margin_right preview">
+            Almost any periodic function can be represented by a Fourier series
+            that converges. Convergence of Fourier series means that as more and
+            more harmonics from the series are summed, each successive partial
+            Fourier series sum will better approximate the function, and will
+            equal the function with a potentially infinite number of harmonics.
+          </p>
+          <p class="margin_right margin_remove_bottom preview">
+            Fourier series can only represent functions that are periodic.
+            However, non-periodic functions can be handled using an extension of
+            the Fourier Series called the Fourier transform which treats
+            non-periodic functions as periodic with infinite period. This
+            transform thus can generate frequency domain representations of
+            non-periodic functions as well as periodic functions, allowing a
+            waveform to be converted between its time domain representation and
+            its frequency domain representation. The goal of this project is to
+            visualize the silhouettes of arbitrary image inputs using the
+            Fourier transform.
+          </p>
+        </div>
+        <img
+          class="img_main"
+          src="~/images/squaredeconstructed.png"
+          alt="squaredeconstructed"
+        />
+      </div>
+      <div class="body_container margin_top">
+        <div>
+          <p class="margin_right preview w520">
+            This project was inspired by the youtube channel 3Blue1Brown.
+            3Blue1Brown, by Grant Sanderson, is some combination of math and
+            entertainment, depending on your disposition. The goal is for
+            explanations to be driven by animations and for difficult problems
+            to be made simple with changes in perspective. To the right is
+            Sanderson's video on Fourier Series and I would highly recommend
+            watching it to enjoy some stunning animations as well as to better
+            grasp the concepts of Fourier Series and the Fourier Transform.
+          </p>
+          <p class="margin_right preview w520">
+            Now, onto the fun stuff. Use the directory to be redirected to the interactive tool pages 
+            for each respective waveform. The Interactive Tool allows you to change the number of harmonics
+            used in the summation to generate a wave approximation in real time.
+          </p>
+        </div>
+        <iframe
+          width="1100"
+          height="615"
+          src="https://www.youtube.com/embed/r6sGWTCMz2k"
+        >
+        </iframe>
+  </body>
+</html>

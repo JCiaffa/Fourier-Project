@@ -1,0 +1,82 @@
+<body class="bb">
+  <button><a class="bl" href="/square/decomposition">Square Decomposition</a></button>
+  @section square
+  {
+  <script>
+    let time = 0;
+    let deltaT = 0.01;
+    let wave = [];
+    let holdx = [];
+    let holdy = [];
+
+    function setup() {
+      var cnv = createCanvas(1880, 350);
+      var w = (windowWidth - width) / 2;
+      cnv.position(w, 100);
+      slider = createSlider(2, 50, 4);
+      slider.position(w, 460);
+    }
+
+  function draw() {
+  background(0);
+  translate(300, 175);
+  let x = 0;
+  let y = 0;
+
+  for (let i = 0; i < slider.value(); i++) {
+    let prevx = x;
+    let prevy = y;
+    let n = i * 2 + 1;
+    let radius = 100 * (4 / (n * PI));
+
+    x += radius * cos(2 * n * time);
+    y += radius * sin(2 * n * time);
+
+    stroke(255);
+    strokeWeight(2);
+    noFill();
+    ellipse(prevx, prevy, radius * 2);
+
+    strokeWeight(0.8);
+    line(prevx, prevy, x, y);
+    ellipse(x, y, 2);
+  }
+  wave.unshift(y);
+  holdx.unshift(x);
+  holdy.unshift(y);
+
+  beginShape();
+  strokeWeight(2.5);
+  stroke("pink");
+  for (let i = 0; i < wave.length; i++) {
+    vertex(holdx[i], holdy[i]);
+  }
+  endShape();
+
+  translate(400, 0);
+  stroke(255);
+  strokeWeight(1.5);
+  line(x - 400, y, 0, wave[0]);
+
+  beginShape();
+  noFill();
+  stroke("cyan");
+  strokeWeight(3);
+  for (let i = 0; i < wave.length; i++) {
+    vertex(i, wave[i]);
+  }
+  endShape();
+
+  if (wave.length > 1080) {
+    wave.pop();
+  }
+  if (wave.length > 314) {
+    holdx.pop();
+    holdy.pop();
+  }
+
+  time += deltaT;
+}
+</script>
+}
+</body>
